@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="dataSource">
+		<property value="com.mysql.cj.jdbc.Driver"
+			name="driverClassName" />
+		<property
+			value="jdbc:mysql://localhost:3306/onedate?characterEncoding=UTF-8&amp;serverTimezone=UTC"
+			name="url" />
+		<property value="root" name="username" />
+		<property value="1234" name="password" />
+	</bean>	
+	
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
+		id="sqlSessionFactory">
+		<property name="dataSource" ref="dataSource" />
+		<property value="classpath:/mybatis-config.xml"
+			name="configLocation" />
+		<property value="classpath:mappers/**/*Mapper.xml"
+			name="mapperLocations" />
+	</bean>
+
+	<bean class="org.mybatis.spring.SqlSessionTemplate"
+		id="sqlSession" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory"
+			ref="sqlSessionFactory" />
+	</bean>
+		
+	
+	<bean id="userDaoBean" class="com.one.dao.UserDAOImpl">
+		<property name="sqlsession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean id="userService" class="com.one.service.UserServiceImpl">
+		<constructor-arg ref="userDaoBean"></constructor-arg>
+	</bean>	
+	
+	<bean id="messageDaoBean" class="com.one.dao.MessageDAOImpl">
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+		
+	<bean id="messageService" class="com.one.service.MessageServiceImpl">
+		<constructor-arg ref="messageDaoBean"></constructor-arg>
+	</bean>	
+	
+	<bean id="matchingDaoBean" class="com.one.dao.MatchingDAOImpl">
+		<property name="sqlsession" ref="sqlSession"></property>
+	</bean>
+	
+	<bean id="matchingServiceBean" class="com.one.service.MatchingServiceImpl">
+		<constructor-arg ref="matchingDaoBean"></constructor-arg>
+		<constructor-arg ref="userDaoBean"></constructor-arg>
+	</bean>
+	
+	
+	<!-- 파일업로드 -->
+	<bean name="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="10485760"></property>
+	</bean>
+
+	<!-- KakaoController Class에 대한 Bean설정 추가 -->
+	<bean id="kakaoController" class="com.one.project.KakaoController" />
+
+	<!-- NaverController Class에 대한 Bean설정 추가 -->
+	<bean id="naverController" class="com.one.project.NaverController" />
+
+	<!-- Mail 인증 관련 -->
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.naver.com" />
+		<property name="port" value="465" />
+		<property name="username" value="noraboca@naver.com" />
+		<property name="password" value="CUW91G7NLJWJ" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+		
+</beans>

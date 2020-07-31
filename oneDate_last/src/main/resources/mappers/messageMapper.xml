@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.mapper.MessageMapper">
+	<insert id="insertMessage">
+		insert into message(text,user_send,user_receive) values(#{text},#{user_send},#{user_receive});
+	</insert>
+
+	<select id="selectAllMessage" resultType="com.one.vo.MessageVO">
+		select * from message where user_send=#{user1} and user_receive=#{user2}
+		or user_send=#{user2} and user_receive=#{user1};
+	</select>
+	
+	<select id="selectLastMessage" resultType="com.one.vo.MessageVO">
+		select * from message where ts = (select max(ts) 
+		from message where user_receive=#{user2} and user_send=#{user1}
+		or user_send=#{user2} and user_receive=#{user1});
+
+	</select>
+
+</mapper>

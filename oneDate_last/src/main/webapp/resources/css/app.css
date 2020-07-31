@@ -1,0 +1,126 @@
+:root{
+    --main-color: #e33988;
+    --dark-color: #14171a;
+    --footer-link-color: #767e85;
+    --footer-top-border-color: #e6ecf0;
+}
+
+.container *, .container *::after, .container *::before{
+    box-sizing: border-box;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-image:url('../images/1.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+
+/** middle box **/
+.container .middle-box{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.id_box, .pw_box{
+    background-color: #f5f8fa;
+    color: #657685;
+    width: 210px;
+    height: 60px;
+    text-align: left;
+    margin: 5px auto 20px;		
+}
+
+.input_id, .input_pw{
+    border: 0; border-bottom: 2px solid #657685;
+    background-color: #f5f8fa;
+    width: 210px;				
+    height: 33px;
+    padding: 2px 10px 5px;		
+    font-size: 18px;
+}
+
+#text1, #text2{ padding-left: 10px; }
+
+.input_id:focus, .input_pw:focus{
+    outline: none;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.container .middle-box .card{
+    padding: 0 3px;    		
+}
+.container .middle-box .card .head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .middle-box .card .logo-icon{
+    font-size: 2.5em;
+    color: var(--main-color);
+
+}
+
+.container .middle-box .card h1{
+    font-size: 7rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.container .middle-box .card p{
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+/** end middle-box **/
+
+
+/** Buttons **/
+button.mbtn{
+    display: block;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.block{
+    width: 100%;
+    margin-bottom: .8rem;
+}
+
+button.primary{
+    background-color: var(--main-color);
+    color: #fff;
+}
+button.primary:hover{
+    background-color: #c72668;
+}
+button.outline{
+    background-color: #fff;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+button.outline:hover{
+    background-color: #fce8f1;
+}

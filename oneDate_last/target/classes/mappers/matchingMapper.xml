@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.mapper.MatchingMapper">
+	<insert id="insertMatch">
+		insert into matched_user(user_idx,matched_user_id) values(#{user_idx},#{matched_user_id});
+	</insert>
+	
+	<select id="selectMatchs" resultType="com.one.vo.MatchedUserVO">
+		select * from matched_user where user_idx=#{user_idx} order by idx desc;
+	</select>
+
+	<insert id="insertLike" parameterType="com.one.vo.LikesVO">
+		insert into likes(who,whom) values(#{who},#{whom});
+	</insert>
+
+	<delete id="deleteLike">
+		delete from likes where who=#{user_idx1} and whom=#{user_idx2} or who =#{user_idx2} and whom =#{user_idx1} ;
+	</delete>
+	
+	<select id="selectLikes" resultType="com.one.vo.LikesVO">
+		select * from likes where whom=#{user_idx};
+	</select>
+	
+	
+
+
+</mapper>

@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+.top {
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.content {
+	/*position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, 0);*/
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.name, .gender, .id, .email, .birthday, .password, .phone {
+	width: 350px;
+	display: inline-block;
+	margin: 30px 30px;
+}
+
+.address, .details {
+	max-width: 700px;
+	display: inline-block;
+	margin: 30px 30px;
+}
+
+#user_name, #user_mail, .birth, #user_pw, #user_id, #phone {
+	border: 0;
+	border-radius: 5px;
+	background-color: #fcf0f6;
+	height: 33px;
+	padding-left: 10px;
+	font-size: 15px;
+	width: 300px;
+	margin-left: 5px;
+}
+
+#address {
+    border: 0; 
+    border-radius: 5px;
+    background-color: #fcf0f6;
+    height: 33px;
+    padding-left: 10px;
+    font-size: 15px;
+    width: 380px; 
+    margin-left: 5px;
+}
+
+#details {
+    border: 0; 
+    border-radius: 5px;
+    background-color: #fcf0f6;
+    height: 70px;
+    padding-left: 10px;
+    font-size: 15px;
+    width: 400px; 
+    margin-left: 5px;
+}
+
+.outline, .birth {
+	margin-right: 5px;
+}
+
+.birth {
+	width: 80px;
+}
+
+.sms {
+	text-align: left;
+	margin-top: 10px;
+}
+
+.lb {
+	float: left;
+	margin-top: 10px;
+}
+
+.lb .outline {
+	line-height: 12px;
+	background-color: #fff;
+	color: #e33988;
+	border: 1px solid #e33988;
+}
+
+.lb .outline:hover {
+	background-color: #fce8f1;
+}
+
+.interest_box .btn {
+	margin-top: 10px;
+	padding: 6px 10px;
+}
+
+.str_box #hobby {
+	border: 0;
+    background-color: #fcf0f6;
+    width: 450px;
+    display: block;
+    font-size: 15px;
+    padding: 10px 0px 10px 10px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.str_box #hobby:focus {
+	outline: none;
+	border: 0;
+}
+
+button.btn {
+	border: none;
+	outline: none;
+	font-size: 15px;
+	padding: 10px 16px;
+	border-radius: 100px;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: #e33988;
+	color: #fff;
+}
+
+button.btn:hover {
+	background-color: #c72668;
+}
+
+.fas {
+	width: 15px;
+}
+
+.img_box { margin-top: 30px; margin-left: 5px; }
+
+.imgInput{
+    display: inline-block;
+    background-image:url('../images/add_img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px; 
+    width: 150px; 
+    height: 250px;
+    position: relative;
+    margin-right: 30px;
+    /* left: 200px;
+    top: 65px; */
+}
+
+.imgInput input[type="file"]{
+    position: absolute;
+    width: 150px;
+    height: 250px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    opacity: 0;
+    border:0;
+    cursor: pointer;
+    background-color: blue;
+}
+
+

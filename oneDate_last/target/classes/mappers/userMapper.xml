@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.mapper.UserMapper">
+
+	<insert id="insertUser" useGeneratedKeys="true" keyProperty="idx">
+		insert into user(name, id, password, gender, interested_gender, details, email, 
+			birth_day, phone, sms, address, hobby,   
+			main_photo_src, sub1_photo_src, sub2_photo_src, sub3_photo_src)
+			values(#{name}, #{id}, #{password}, #{gender}, #{interested_gender}, #{details}, 
+			#{email}, #{birth_day}, #{phone}, #{sms}, #{address}, #{hobby}, #{main_photo_src}, 
+			#{sub1_photo_src}, #{sub2_photo_src}, #{sub3_photo_src})
+	</insert>
+	
+	<select id="selectUserByIdx" resultType="com.one.vo.UserVO">
+		select * from user where idx=#{idx};
+	</select>
+
+	<select id="selectUserById" resultType="com.one.vo.UserVO">
+		select * from user where id = #{id};
+	</select>
+
+	<select id="selectUserIdx" resultType="java.lang.Integer">
+		select idx from user where id=#{id};
+	</select>
+	
+	<select id="selectAllUserByGender" resultType="com.one.vo.UserVO">
+		
+		select * from user where user.gender=#{gender} 
+		and user.id not in(select matched_user_id from matched_user where user_idx=#{idx});
+		
+	</select>
+	
+	<select id="selectUser" resultType="com.one.vo.UserVO">
+		select * from user where (id=#{emailOrId} or email=#{emailOrId}) and password=#{password}
+	</select>
+	
+	<select id="searchUser" resultType="com.one.vo.UserVO">
+		select * from user where (id=#{nameOrId} or name=#{nameOrId}) and email=#{email}
+	</select>
+	
+	<select id="countRowsEmail" resultType="java.lang.Integer">
+		select count(*) from user where email=#{email}
+	</select>
+	
+	<select id="countRowsId" resultType="java.lang.Integer">
+		select count(*) from user where id=#{id}
+	</select>
+	
+	<update id="updateUser" useGeneratedKeys="true" keyProperty="idx">
+		update user set name=#{name}, password=#{password}, gender=#{gender}, 
+			interested_gender=#{interested_gender}, details=#{details},  
+			birth_day=#{birth_day}, phone=#{phone}, sms=#{sms}, address=#{address}, 
+			hobby=#{hobby}, main_photo_src=#{main_photo_src}, 
+			sub1_photo_src=#{sub1_photo_src}, sub2_photo_src=#{sub2_photo_src}, 
+			sub3_photo_src=#{sub3_photo_src}  
+			where id=#{id}
+	</update>
+	
+	<delete id="deleteUser">
+		delete from user where idx=#{idx}
+	</delete>
+	
+</mapper>

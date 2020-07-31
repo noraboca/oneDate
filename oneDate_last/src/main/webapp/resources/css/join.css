@@ -1,0 +1,373 @@
+@charset "utf-8";
+
+* input[type="text"]:focus, * input[type="password"]:focus{
+	outline: none;
+	border-bottom: 2px solid #e33988;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.pContainer{
+    height: 100%;
+    text-align: center;
+}
+
+.popup{position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; 
+    border:1px solid #fff; box-sizing: border-box; z-index: 100;
+    width: 500px; height: 90%; max-height: 650px; border-radius: 15px; }
+
+.dim{position: fixed; left: 0; top: 0; z-index: 99; width: 100%; height: 100%; 
+    background: black; opacity: .5;}
+
+h1 { font-size: 23px; text-align: left;}
+h2 { font-size: 19px; text-align: left;}
+
+.head {height: 50px; display: flex;}
+
+.hd1 { flex: 1; text-align: left; margin-top: 2px;}
+.hd2 { flex: 1; text-align: center;}
+.hd3 { flex: 1; text-align: right;}
+
+.title {margin-top: 30px; margin-left: 30px;}
+
+.join2_box {margin-top: 30px; margin-left: 40px; margin-bottom: 35px;}
+
+.join2_text {text-align: left; width: 400px; }
+.join2_t1 {margin-left: 30px; text-align: left; color: #767e85;}
+
+.join3_t1 {margin-top: 65px; margin-bottom: 15px; margin-left: 30px; text-align: left; 
+    width: 440px; letter-spacing: 0.3px;}
+
+.join4_t1 {margin-left: 30px; text-align: left; color: #767e85;}
+
+.userInfo_text {margin: 40px 30px; text-align: left; 
+    width: 440px; letter-spacing: 0.3px;}
+    
+.sub_t {margin-top: 20px;}
+
+.input_box {
+    background-color: #f5f8fa;
+    color: #657685;
+    width: 440px;
+    height: 60px;
+    text-align: left;
+    margin: 28px 20px 35px 28px;
+}
+
+.code, .pw, .bio{margin-top: 15px;}
+
+#user_name, #user_mail, #email_code, #user_pw, #introduce{
+    border: 0; border-bottom: 2px solid #657685;
+    background-color: #f5f8fa;
+    width: 430px;
+    height: 33px;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+#text1, #text2{ padding-left: 10px; }
+
+.message {text-align: right; margin-top: 5px; padding-right: 10px;}
+
+#msg1, #msg2, #msg3 { padding-left: 10px; float: left;}
+
+a {text-decoration: none; color:#a1a1a1;}
+a:hover{text-decoration: underline;}
+
+.logo-icon{
+    font-size: 30px;
+    color: #e33988;
+    margin-top: 14px;
+    margin-left: 4px;
+}
+
+.close_btn{
+    font-size: 30px;
+    color: #dddbdb;
+    margin-top: 14px;
+    margin-left: 4px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+.close_btn:hover{
+    color: #e33988;
+}
+
+.back_btn{
+    margin-top: 5px;
+    margin-left: 12px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    line-height: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: #e33988;
+    background-color: #fff;
+    animation: arrow 700ms linear infinite;
+}
+.back_btn:hover{
+    background-color: #e8f4fc;
+}
+
+input.btn{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #e33988;
+    color: #fff;
+}
+
+input.btn:hover{
+    background-color: #c72668;
+}
+
+input.next{
+    width: 62px;
+    line-height: 10px;
+    margin-top: 11px;
+    margin-right: 14px;
+    margin-bottom: 20px;
+}
+
+input.skip{
+	color: #e33988;
+    background-color: #fff;
+	line-height: 10px;
+	margin-top: 11px;
+    margin-right: 14px;
+    margin-bottom: 20px;
+}
+
+input.skip:hover{
+	background-color: #e8f4fc;
+}
+
+input.join{
+    display: inline-block;
+    width: 440px;
+    line-height: 26px;
+    margin-top: 20px;
+}
+.interest_box .outline{
+    background-color: #fff;
+    color: #e33988;
+    border: 1px solid #e33988;
+}
+.interest_box .outline:hover{
+    background-color: #fce8f1;
+}
+
+#step{display: inline-block; margin-left: 15px; margin-top: -5px;}
+
+.arrow {
+    width: 1.5px;
+    height: 13px;
+    position: relative;
+    background: #e33988;
+    
+    display: inline-block;
+}
+
+.arrow:before {
+    content: " ";
+    width: 1.5px;
+    height: 9px;
+    background: #e33988;
+    position: absolute;
+    top: -3px;
+    transform: rotate(50deg);
+    left: -3px;
+}
+
+.arrow:after {
+    content: " ";
+    width: 1.5px;
+    height: 9px;
+    background: #e33988;
+    position: absolute;
+    top: -3px;
+    transform: rotate(-50deg);
+    right: -3px;
+}
+
+.left {
+    transform: rotate(-90deg);
+}
+
+.chk_box{position: relative; float: left;}
+
+.chk_box input[type="checkbox"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+}
+
+.chk_box input[type="checkbox"] + label:before {
+   content: " ";
+   display: inline-block;
+   width: 15px;
+   height: 15px;
+   line-height: 15px;
+   margin: -2px 8px 0 0;
+   text-align: center;
+   vertical-align: middle;
+   background: #fff;
+   border: 2px solid #657685;
+   border-radius: 3px;
+   cursor: pointer;
+}
+.chk_box input[type="checkbox"]:checked + label:before{
+    content: '\2713';
+    color: #fff;
+    background: #e33988;
+    border-color: #e33988;
+}
+
+.popup .temp{display: flex; margin-left: 28px; text-decoration: none;}
+
+.click_pop{
+    display: none;
+    text-align: left; border: 1px solid #e0e0e0; border-radius: 5px; 
+    box-shadow: -1px 1px 3px #e0e0e0; width:222px; height: 148px; background: #fff;
+    margin-left: 70px; position: relative;
+}
+
+.err{
+	border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 16px;
+    border-radius: 5px;
+    width: 380px;
+    position: absolute;
+    bottom: 0px;
+    left: 43px;
+    background-color: #e33988;
+    color: #fff;
+}
+
+.td1{border-bottom: 1px solid #e9e9e9; color: #657685; padding-left: 15px;}
+.td2{padding-left: 10px;}
+.td2:hover{text-decoration: none; background: #f5f8fa;}
+
+.language{margin-top: 10px;}
+.lang{
+	display: inline-block; 
+	border-bottom: 1px solid #e9e9e9; 
+    width: 440px;
+    height: 40px;
+}
+.lang .l1{float:left; margin-top: 10px;}
+.lang .chk_box{float:right; margin-right: -5px; margin-top: 10px;}
+#showMore{color: #e33988; margin-top: 8px; display: inline-block;}
+
+.str_box{margin-top: 20px;}
+.str_box .icon{
+	color: #e33988;
+    font-size: 18px;
+    position: absolute;
+    display: block;
+    left: 45px;
+    padding-top: 10px;
+    
+}
+
+.str_box .search {
+	border: 1px solid #e33988;
+    background-color: #fff;
+    width: 390px;
+    position: absolute;
+    display: block;
+    left: 28px;
+    font-size: 15px;
+   	padding: 10px 0px 10px 50px;
+    border-radius: 100px;
+}
+
+.str_box .search:focus {
+	outline: none;
+	border: 1px solid #e33988;
+}
+
+.gender_box {
+	position: absolute; 
+    float: left;
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.gender_box input[type="radio"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+}
+
+#male + label:before, #male2 + label:before {
+    content: "남성";
+    font-weight: bold;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    margin: -2px 8px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+    color: #e33988;
+    border: 1px solid #e33988;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#male:checked + label:before, #male2:checked + label:before {
+    content: '남성';
+    color: #fff;
+    background: #e33988;
+    border-color: #e33988;
+}
+#female + label:before, #female2 + label:before {
+    content: "여성";
+    font-weight: bold;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    margin: -2px 8px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+    color: #e33988;
+    border: 1px solid #e33988;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+#female:checked + label:before, #female2:checked + label:before {
+    content: '여성';
+    color: #fff;
+    background: #e33988;
+    border-color: #e33988;
+}
+
